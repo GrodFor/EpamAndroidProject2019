@@ -1,0 +1,171 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2019 The New York Times Company. All Rights Reserved.",
+  "section": "automobiles",
+  "last_updated": "2019-05-12T15:37:04-04:00",
+  "num_results": 2,
+  "results":
+  [
+    {
+      "section": "Business",
+      "subsection": "",
+      "title": "Crash Scene Investigations, With Automakers on the Case",
+      "abstract": "Special teams dispatched by a number of manufacturers glean valuable information on what happens to vehicles and their occupants after a crash.",
+      "url": "https://www.nytimes.com/2019/05/09/business/crash-scene-investigations.html",
+      "byline": "By TOM VOELK",
+      "item_type": "Article",
+      "updated_date": "2019-05-10T00:21:03-04:00",
+      "created_date": "2019-05-09T06:00:04-04:00",
+      "published_date": "2019-05-09T06:00:04-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Traffic Accidents and Safety",
+        "Automobile Safety Features and Defects",
+        "Roads and Traffic"
+      ],
+      "org_facet": [
+        "Volvo Car Corp",
+        "Bayerische Motorenwerke AG",
+        "American Honda Motor Co",
+        "National Highway Traffic Safety Administration"
+      ],
+      "per_facet": [],
+      "geo_facet": [],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2019/05/09/business/09wheels-1/09wheels-1-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Volvo responds to auto accidents 24 hours a day within an hour’s drive of the company’s headquarters in Goteborg, Sweden.",
+          "copyright": "Volvo Cars"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/05/09/business/09wheels-1/09wheels-1-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Volvo responds to auto accidents 24 hours a day within an hour’s drive of the company’s headquarters in Goteborg, Sweden.",
+          "copyright": "Volvo Cars"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/05/09/business/09wheels-1/caa3668c3ca5458eb1847f45737f39bd-articleInline.jpg",
+          "format": "Normal",
+          "height": 125,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Volvo responds to auto accidents 24 hours a day within an hour’s drive of the company’s headquarters in Goteborg, Sweden.",
+          "copyright": "Volvo Cars"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/05/09/business/09wheels-1/09wheels-1-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Volvo responds to auto accidents 24 hours a day within an hour’s drive of the company’s headquarters in Goteborg, Sweden.",
+          "copyright": "Volvo Cars"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/05/09/business/09wheels-1/caa3668c3ca5458eb1847f45737f39bd-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 1348,
+          "width": 2048,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Volvo responds to auto accidents 24 hours a day within an hour’s drive of the company’s headquarters in Goteborg, Sweden.",
+          "copyright": "Volvo Cars"
+        }
+      ],
+      "short_url": "https://nyti.ms/2LykNf1"
+    },
+    {
+      "section": "Business",
+      "subsection": "",
+      "title": "Distracted by Tech While Driving? The Answer May Be More Tech",
+      "abstract": "The most effective safety features may be the systems that are laying the foundation for the autonomous cars of the future.",
+      "url": "https://www.nytimes.com/2019/05/02/business/distracted-driving-technology.html",
+      "byline": "By PAUL STENQUIST",
+      "item_type": "Article",
+      "updated_date": "2019-05-02T23:38:48-04:00",
+      "created_date": "2019-05-02T06:00:04-04:00",
+      "published_date": "2019-05-02T06:00:04-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "des_facet": [
+        "Driver Distraction and Fatigue",
+        "Traffic Accidents and Safety",
+        "Automobile Safety Features and Defects",
+        "Voice Recognition Systems",
+        "Cellular Telephones"
+      ],
+      "org_facet": [
+        "AAA Foundation for Traffic Safety",
+        "American Automobile Assn",
+        "Insurance Institute for Highway Safety"
+      ],
+      "per_facet": [],
+      "geo_facet": [],
+      "multimedia": [
+        {
+          "url": "https://static01.nyt.com/images/2019/05/02/business/02wheels/02wheels-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Voice activation can let a driver watch the road instead of dealing with buttons or touch-screen icons, but the systems still demand the driver&rsquo;s attention.",
+          "copyright": "AAA"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/05/02/business/02wheels/02wheels-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Voice activation can let a driver watch the road instead of dealing with buttons or touch-screen icons, but the systems still demand the driver&rsquo;s attention.",
+          "copyright": "AAA"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/05/02/business/02wheels/02wheels-articleInline.jpg",
+          "format": "Normal",
+          "height": 127,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Voice activation can let a driver watch the road instead of dealing with buttons or touch-screen icons, but the systems still demand the driver&rsquo;s attention.",
+          "copyright": "AAA"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/05/02/business/02wheels/merlin_154254315_3909ce01-257b-4864-9f7a-80b677d02efe-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Voice activation can let a driver watch the road instead of dealing with buttons or touch-screen icons, but the systems still demand the driver&rsquo;s attention.",
+          "copyright": "AAA"
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/05/02/business/02wheels/merlin_154254315_3909ce01-257b-4864-9f7a-80b677d02efe-superJumbo.jpg",
+          "format": "superJumbo",
+          "height": 1365,
+          "width": 2048,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Voice activation can let a driver watch the road instead of dealing with buttons or touch-screen icons, but the systems still demand the driver&rsquo;s attention.",
+          "copyright": "AAA"
+        }
+      ],
+      "short_url": "https://nyti.ms/2ZS9VM7"
+    }
+  ]
+}
