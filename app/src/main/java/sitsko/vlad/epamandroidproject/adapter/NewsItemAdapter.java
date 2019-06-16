@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import sitsko.vlad.epamandroidproject.R;
 import sitsko.vlad.epamandroidproject.model.ArticleModel;
@@ -15,11 +16,10 @@ import sitsko.vlad.epamandroidproject.model.ArticleModel;
 public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
 
     private final LayoutInflater mInflater;
-    private ArrayList<ArticleModel> articleModels;
+    private ArrayList<ArticleModel> articleModels = new ArrayList<>();
 
-    public NewsItemAdapter(final Context pContext, ArrayList<ArticleModel> articleModels) {
+    public NewsItemAdapter(final Context pContext) {
         mInflater = (LayoutInflater) pContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.articleModels = articleModels;
     }
 
     @NonNull
@@ -40,5 +40,10 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
     @Override
     public int getItemCount() {
         return articleModels.size();
+    }
+
+    public void addItems(final List<ArticleModel> pResult) {
+        articleModels.addAll(pResult);
+        notifyDataSetChanged();
     }
 }
