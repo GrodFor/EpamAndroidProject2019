@@ -6,12 +6,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import sitsko.vlad.epamandroidproject.R;
 import sitsko.vlad.epamandroidproject.model.ArticleModel;
+import sitsko.vlad.epamandroidproject.model.MultimediaModel;
 
 public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
 
@@ -31,10 +35,22 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull NewsItemViewHolder newsItemViewHolder, int i) {
-        ArticleModel articleModel = articleModels.get(i);
+        final ArticleModel articleModel = articleModels.get(i);
+        final MultimediaModel[] multimediaArray = articleModel.getMultimedia();
+
         newsItemViewHolder.titleTexView.setText(articleModel.getTitle());
         newsItemViewHolder.authorTextView.setText(articleModel.getByline());
         newsItemViewHolder.dateTextView.setText(articleModel.getPublished_date());
+
+        if (multimediaArray.length > 0) {
+            final MultimediaModel multimediaModel = articleModel.getMultimedia()[1];
+            Picasso.get().load(multimediaModel.getUrl())
+                    .placeholder(R.drawable.logo_nyt)
+                    .error(R.drawable.ic_placeholder_error)
+                    .into(newsItemViewHolder.thumbnail);
+        } else {
+            newsItemViewHolder.thumbnail.setImageResource(R.drawable.logo_nyt);
+        }
     }
 
     @Override
