@@ -53,4 +53,32 @@ public class ArticleModel {
     public MultimediaModel[] getMultimedia() {
         return multimedia;
     }
+
+    public void setSection(String section) {
+        this.section = section;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setParagraph(String paragraph) {
+        this.paragraph = paragraph;
+    }
+
+    public void setShort_url(String short_url) {
+        this.short_url = short_url;
+    }
+
+    public void setPublished_date(String published_date) {
+        this.published_date = published_date;
+    }
+
+    public void setByline(String byline) {
+        this.byline = byline;
+    }
+
+    public void setMultimedia(MultimediaModel[] multimedia) {
+        this.multimedia = multimedia;
+    }
 }

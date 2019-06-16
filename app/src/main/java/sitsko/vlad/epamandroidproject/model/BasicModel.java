@@ -9,5 +9,17 @@ public class BasicModel {
     private int num_results;
 
     @SerializedName("results")
-    ArticleModel article;
+    ArticleModel[] article;
+
+    public String getSection() {
+        return section;
+    }
+
+    public int getNum_results() {
+        return num_results;
+    }
+
+    public ArticleModel[] getArticle() {
+        return article;
+    }
 }
