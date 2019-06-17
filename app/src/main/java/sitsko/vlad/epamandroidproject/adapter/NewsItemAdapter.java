@@ -7,10 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +18,7 @@ import sitsko.vlad.epamandroidproject.DetailPageActivity;
 import sitsko.vlad.epamandroidproject.R;
 import sitsko.vlad.epamandroidproject.model.ArticleModel;
 import sitsko.vlad.epamandroidproject.model.MultimediaModel;
+import sitsko.vlad.epamandroidproject.util.DiffUtil;
 
 public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
 
@@ -42,7 +43,12 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
 
         newsItemViewHolder.titleTexView.setText(articleModel.getTitle());
         newsItemViewHolder.authorTextView.setText(articleModel.getByline());
-        newsItemViewHolder.dateTextView.setText(articleModel.getPublished_date());
+
+        try {
+            newsItemViewHolder.dateTextView.setText(DiffUtil.dateFormat(articleModel.getPublished_date()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         if (multimediaArray.length > 0) {
             final MultimediaModel multimediaModel = articleModel.getMultimedia()[1];
@@ -54,13 +60,10 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
             newsItemViewHolder.thumbnail.setImageResource(R.drawable.logo_nyt);
         }
 
-        newsItemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DetailPageActivity.class);
-                intent.putExtra("article", articleModel);
-                v.getContext().startActivity(intent);
-            }
+        newsItemViewHolder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), DetailPageActivity.class);
+            intent.putExtra("article", articleModel);
+            v.getContext().startActivity(intent);
         });
     }
 

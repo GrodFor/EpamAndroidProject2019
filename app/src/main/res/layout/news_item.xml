@@ -30,6 +30,7 @@
                 android:layout_toLeftOf="@id/thumbnail"
                 android:text="Title"
                 android:textAlignment="textStart"
+                android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 

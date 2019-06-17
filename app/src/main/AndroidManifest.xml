@@ -4,6 +4,7 @@
     package="sitsko.vlad.epamandroidproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,13 +16,12 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".DetailPageActivity"
-            android:theme="@style/AppTheme"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action
                     android:name="android.intent.action.MAIN"
-                    android:theme="@style/AppTheme.NoActionBar"/>
+                    android:theme="@style/AppTheme.NoActionBar" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

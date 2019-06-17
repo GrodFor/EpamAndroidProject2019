@@ -3,13 +3,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_arts"
-            android:title="Arts" />
-        <item
-            android:id="@+id/nav_automobiles"
-            android:title="Automobiles" />
-    </group>
+    <item android:title="">
+        <menu>
 
+        </menu>
+    </item>
+
+    <item android:title="Home page">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_home"
+                    android:title="Home" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Themes">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_arts"
+                    android:title="Arts" />
+                <item
+                    android:id="@+id/nav_automobiles"
+                    android:title="Automobiles" />
+                <item
+                    android:id="@+id/nav_business"
+                    android:title="Business" />
+                <item
+                    android:id="@+id/nav_movies"
+                    android:title="Movies" />
+                <item
+                    android:id="@+id/nav_politics"
+                    android:title="Politics" />
+                <item
+                    android:id="@+id/nav_science"
+                    android:title="Science" />
+                <item
+                    android:id="@+id/nav_sports"
+                    android:title="Sports" />
+                <item
+                    android:id="@+id/nav_technology"
+                    android:title="Technology" />
+            </group>
+        </menu>
+    </item>
 </menu>
