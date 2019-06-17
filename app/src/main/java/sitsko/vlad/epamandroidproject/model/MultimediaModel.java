@@ -1,6 +1,8 @@
 package sitsko.vlad.epamandroidproject.model;
 
-public class MultimediaModel {
+import java.io.Serializable;
+
+public class MultimediaModel implements Serializable {
 
     private String url;
 

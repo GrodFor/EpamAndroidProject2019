@@ -2,7 +2,9 @@ package sitsko.vlad.epamandroidproject.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ArticleModel {
+import java.io.Serializable;
+
+public class ArticleModel implements Serializable {
 
     @SerializedName("section")
     private String section;
