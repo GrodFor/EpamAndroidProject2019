@@ -70,7 +70,13 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
     }
 
     public void addItems(final List<ArticleModel> pResult) {
+        removeItems();
         articleModels.addAll(pResult);
+        notifyDataSetChanged();
+    }
+
+    private void removeItems() {
+        articleModels.clear();
         notifyDataSetChanged();
     }
 }

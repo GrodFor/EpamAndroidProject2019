@@ -6,7 +6,7 @@ import sitsko.vlad.epamandroidproject.util.ICallback;
 
 public interface IWebService<T> {
 
-    void loadNewsItems(final ICallback<List<T>> callback);
+    void loadNewsItems(final String theme, final ICallback<List<T>> callback);
 
     void addEntity(final T newsItem);
 }
