@@ -1,10 +1,14 @@
 package sitsko.vlad.epamandroidproject;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +17,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -25,8 +28,8 @@ import sitsko.vlad.epamandroidproject.util.ICallback;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private final String TAG = MainActivity.class.getSimpleName();
-    private final String DEFAULT_THEME = "home";
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String DEFAULT_THEME = "home";
 
     private NewsItemAdapter newsItemAdapter;
     private final IWebService<ArticleModel> webService = new NewsItemWebService();
@@ -34,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private String theme;
 
     //TODO onSaveState
-    //TODO checkInternet
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        /////////////////////////////////////////
         final RecyclerView recyclerView = findViewById(R.id.news_recyclerView);
         progressBar = findViewById(R.id.progressBar);
 
@@ -60,9 +61,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         newsItemAdapter = new NewsItemAdapter(this);
         recyclerView.setAdapter(newsItemAdapter);
 
-        showProgress();
-        theme = DEFAULT_THEME;
-        getApiResponse(theme);
+        if (isOnline()) {
+            showProgress();
+            theme = DEFAULT_THEME;
+            getApiResponse(theme);
+        } else {
+            hideProgress();
+            openDialog();
+        }
     }
 
     @Override
@@ -77,21 +83,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-
         theme = item.getTitle().toString().toLowerCase();
-        Toast.makeText(this, theme, Toast.LENGTH_SHORT).show();
-
         getApiResponse(theme);
-//        int id = item.getItemId();
-//        if (id == R.id.nav_arts) {
-//
-//        } else if (id == R.id.nav_automobiles) {
-//            theme = item.getTitle().toString().toLowerCase();
-//            Toast.makeText(this, theme, Toast.LENGTH_SHORT).show();
-//        }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 
@@ -134,4 +131,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             progressBar.setVisibility(View.VISIBLE);
         }
     }
+
+    public boolean isOnline() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
+
+    private void openDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("No internet connection!")
+                .setCancelable(true)
+                .setPositiveButton(getString(android.R.string.yes), (dialog, id) -> {
+                    finish();
+                });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
 }

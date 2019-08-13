@@ -1,14 +1,11 @@
 package sitsko.vlad.epamandroidproject.backend;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -27,23 +24,19 @@ public class NewsItemWebService implements IWebService<ArticleModel> {
     private List<ArticleModel> newsItemList = new ArrayList<>();
     private final Executor executor = Executors.newSingleThreadExecutor();
 
-    private static String API_URL1 = "https://api.nytimes.com/svc/topstories/v2/";
-    private static String API_URL2 = ".json?api-key=uTWBBP1aiebbTQH2NpQRfYzYBwX4PDJI";
+    private static String api_url = "https://api.nytimes.com/svc/topstories/v2/";
+    private static String api_token = ".json?api-key=uTWBBP1aiebbTQH2NpQRfYzYBwX4PDJI";
 
     @Override
     public void loadNewsItems(final String theme, final ICallback<List<ArticleModel>> newsItemList) {
-        executor.execute(new Runnable() {
+        executor.execute(() -> {
+            final Request request = new Request.Builder()
+                    .url(api_url + theme + api_token).build();
 
-            @Override
-            public void run() {
-                final Request request = new Request.Builder()
-                        .url(API_URL1+theme+API_URL2).build();
-
-                try {
-                    newsItemList.onResult(parseGson(httpClient.newCall(request).execute()));
-                } catch (IOException e) {
-                    newsItemList.onResult(Collections.<ArticleModel>emptyList());
-                }
+            try {
+                newsItemList.onResult(parseGson(httpClient.newCall(request).execute()));
+            } catch (IOException e) {
+                newsItemList.onResult(Collections.<ArticleModel>emptyList());
             }
         });
     }
